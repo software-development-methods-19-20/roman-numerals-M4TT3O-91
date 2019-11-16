@@ -40,6 +40,14 @@ public class DecimalToRomanNumeralTest {
     @Test
     void NinetyOneisXCI(){check(91,"XCI");}
 
+    @Test
+    void OneUndredone(){check(101,"CI");}
+
+    @Test
+    void test(){
+        check(1101,"MCI");
+    }
+
     private void check(int i, String s) {
         RomanNumeral romanNumeral = new RomanNumeral(i);
         assertEquals(s, romanNumeral.toString());
