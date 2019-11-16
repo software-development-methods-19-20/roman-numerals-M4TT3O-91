@@ -14,6 +14,7 @@ public class DecimalToRomanNumeralTest {
     }
 
     @Test
+
     void OneIsI() {
         check(1, "I");
     }
@@ -33,10 +34,15 @@ public class DecimalToRomanNumeralTest {
         check(5,"V");
     }
 
+    @Test
+    void ElevenIsXI() { check(11,"XI");}
+
+    @Test
+    void NinetyOneisXCI(){check(91,"XCI");}
+
     private void check(int i, String s) {
         RomanNumeral romanNumeral = new RomanNumeral(i);
         assertEquals(s, romanNumeral.toString());
     }
-
 
 }

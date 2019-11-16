@@ -3,8 +3,10 @@ package dssc.roman;
 public class RomanNumeral {
 
     private int decimal;
-    private String Unit[]={"","I","II","III","IV","V","VI","VII","VIII","IX","X"};
-   // private String Decimal[]={};
+    private String UNIT[]={"","I","II","III","IV","V","VI","VII","VIII","IX"};
+    private String DEC[]={"","X","XX","XXX","XL","L","LX","LXX","LXXX", "XC"};
+
+
 
     public RomanNumeral(int decimal) {
         this.decimal = decimal;
@@ -12,30 +14,18 @@ public class RomanNumeral {
 
     @Override
     public String toString() {
-        if(this.decimal<=10){
-            return Unit[this.decimal];
-        }else{
-            return Unit[1];
+        if (decimal>0) {
+            return DEC[decimal/10%10] + UNIT[decimal%10];
+        }else {
+            return UNIT[0];
+
         }
 
-        /*switch(this.decimal) {
-            case 1:
-            case 2:
-            case 3:
-                return "I".repeat(decimal);
-            case 5:
-                return "V";
-            case 10:
-                return "X";
+        //return UNIT[this.decimal%100];
 
-            default:
-                return "";
-        }*/
-
-        /*if (this.decimal == 0) {
-            return "";
-        } else {
-            return "I".repeat(decimal);
-        }*/
-    }
+        /*if(this.decimal<=10){
+            return UNIT[this.decimal];
+        }else{
+            return UNIT[1];*/
+        }
 }
